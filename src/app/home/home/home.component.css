@@ -1,0 +1,19 @@
+#image2{
+    width: 450px;
+    height: 450px;
+    padding-left: 170px;
+}
+#image3{
+    width: 450px;
+    height: 450px;
+    padding-left: 170px;
+    padding-top: 50px;
+}
+.button-container{
+    text-align: center;
+    margin: 100px;
+}
+.xboxButton{
+    margin-right: 500px;
+    margin-left: 500px;
+}

@@ -1,0 +1,20 @@
+.toolbar{
+    background-color: darkgrey;
+    height:35px;
+    margin: auto;
+    font-size:x-large;
+}
+.navbar{
+    background-color: rgb(214, 65, 65);
+}
+.navContent,a{
+    margin-right: 50px;
+    padding: 10px;
+    font-size: larger;
+    text-align: center;
+
+    margin-left: 29px;
+}
+.toolbar{
+    background-color: rgb(243, 13, 13);
+}
