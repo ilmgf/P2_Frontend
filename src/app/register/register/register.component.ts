@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-
+import { customer } from 'src/app/objects/customer';
+import { RegisterService } from 'src/app/register.service';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -8,13 +9,27 @@ import { Router } from '@angular/router';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor(private router: Router) { }
-
-  toLogin(){
-    this.router.navigate(["/login"]);
-  }
+  customer = new customer();
+  msg='';
+  constructor(private _service: RegisterService, private _router: Router) { }
 
   ngOnInit(): void {
   }
 
+  toLogin(){
+    this._router.navigate(["/login"]);
+  }
+
+  registerCustomer(){
+    this._service.registerPage(this.customer).subscribe (
+      data => {
+        console.log("response recieve");
+        this._router.navigate(['/login'])
+      },
+      error => {
+        console.log("exception occured");
+        this.msg="Username Unavailable";
+      }
+    )
+  }
 }

@@ -1,9 +1,29 @@
-<div class="form">
-    <h2>LOGIN</h2>
-    <input type="text" name="user"  placeholder="USER NAME HERE"/> <br>
-    <input type="password" name="pass" placeholder="PASSWORD HERE"/> <br>
-    <button type="submit" value="submit">Login</button>
-    <button type = 'button' (click)="toRegister()">Register</button>
+<div class="container">
+    <br>
+    <h1>SIGN IN</h1>
+    <br>
+    <form #loginform="ngForm" (ngSubmit)="loginCustomer()">
+      <small class="text-danger"> {{msg}} </small>
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Enter Username" name="username"
+            [(ngModel)]="customer.username" required #username ="ngModel"
+            [class.is.invalid] = "username.invalid && username.touched">
+            <small class="text-danger" [class.d-none]="username.valid || username.untouched">username required</small>
     </div>
+    
+    <br>
+    <div class="form-group">
+        <input type="password" class="form-control" placeholder="Enter Password" name="password"
+            [(ngModel)]="customer.password" required #password ="ngModel"
+            [class.is.invalid] = "password.invalid && password.touched">
+            <small class="text-danger" [class.d-none]="password.valid || password.untouched">password required</small>
+    </div>
+
+      <br>
+      <button type="submit" class="btn btn-primary">SIGN IN</button>
+    </form>
+    <br>
+    <button type="button" (click)="toRegister()">Register</button>
+  </div>
     <!--RETURN TO CONNECT DATABASE TO CHECK IF USERNAME AND PASSWORD 
-        THOSE IN THE DATABASE BEFORE LOGGING IN-->
+        THOSE IN THE DATABASE BEFORE LOGGING-->
