@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { consoles } from 'src/app/objects/consoles';
+import { GetService } from 'src/app/get.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -7,12 +10,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  console:consoles | any;
+  name: string | any;
+
+  constructor(private _GetService:GetService, private route:ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.route.params.subscribe(params =>{
+      this.name=params['title'];
+    });
+    this._GetService.getSingleConsole(this.name).subscribe(data=>{ this.console = data})
+
   }
-addtocart(){
+addtocart(title:string){
   alert('Item added to cart');
+  this.name=title;
+    console.log("added to cart "+this.name);
 }
 
   images = [

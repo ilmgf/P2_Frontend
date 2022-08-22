@@ -1,4 +1,4 @@
 export interface consoles{
-    name: string,
+    title: string,
     price: number
 }
