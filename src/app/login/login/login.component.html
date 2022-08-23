@@ -2,10 +2,10 @@
     <br>
     <h1>SIGN IN</h1>
     <br>
-    <form #loginform="ngForm" (ngSubmit)="loginCustomer()">
+    <form #loginform="ngForm" (ngSubmit)="customerLogin()">
       <small class="text-danger"> {{msg}} </small>
       <div class="form-group">
-        <input type="text" class="form-control" placeholder="Enter Username" name="username"
+        <input type="text" class="form-control" id="username" placeholder="Enter Username" name="username"
             [(ngModel)]="customer.username" required #username ="ngModel"
             [class.is.invalid] = "username.invalid && username.touched">
             <small class="text-danger" [class.d-none]="username.valid || username.untouched">username required</small>
@@ -13,7 +13,7 @@
     
     <br>
     <div class="form-group">
-        <input type="password" class="form-control" placeholder="Enter Password" name="password"
+        <input type="password" class="form-control" id="password" placeholder="Enter Password" name="password"
             [(ngModel)]="customer.password" required #password ="ngModel"
             [class.is.invalid] = "password.invalid && password.touched">
             <small class="text-danger" [class.d-none]="password.valid || password.untouched">password required</small>

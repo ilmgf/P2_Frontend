@@ -11,21 +11,21 @@ import { ActivatedRoute } from '@angular/router';
 export class HomeComponent implements OnInit {
 
   console:consoles | any;
-  name: string | any;
+  title: string | any;
 
   constructor(private _GetService:GetService, private route:ActivatedRoute) { }
 
   ngOnInit(): void {
     this.route.params.subscribe(params =>{
-      this.name=params['title'];
+      this.title=params['title'];
     });
-    this._GetService.getSingleConsole(this.name).subscribe(data=>{ this.console = data})
+    this._GetService.getSingleConsole(this.title).subscribe(data=>{ this.console = data})
 
   }
 addtocart(title:string){
   alert('Item added to cart');
-  this.name=title;
-    console.log("added to cart "+this.name);
+  this.title=title;
+    console.log("added to cart "+this.title);
 }
 
   images = [

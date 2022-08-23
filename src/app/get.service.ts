@@ -10,7 +10,7 @@ import { Cart } from './objects/Cart';
   providedIn: 'root'
 })
 export class GetService {
-  baseurl = "http://localhost:8080/jamba";
+  baseurl = "http://localhost:8080/g-corp";
   customer:customer | any;
   
   constructor(private http:HttpClient) { }
@@ -26,11 +26,11 @@ export class GetService {
   }
 
   getAllConsoles():Observable<consoles>{
-    return this.http.get<consoles>(this.baseurl+"/movie/all-movies")
+    return this.http.get<consoles>(this.baseurl+"/consoles/all-consoles")
   }
   
   getCustomer(username:string):Observable<customer>{
-    return this.http.get<customer>(this.baseurl+"/customer/username/"+username)
+    return this.http.get<customer>(this.baseurl+"/user/username/"+username)
   }
 
   addItemToCart(title:string):Observable<Cart>{
