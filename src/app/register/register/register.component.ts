@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { customer } from 'src/app/objects/customer';
+import { Customer } from 'src/app/objects/customer';
 import { RegisterService } from 'src/app/register.service';
 @Component({
   selector: 'app-register',
@@ -9,7 +9,7 @@ import { RegisterService } from 'src/app/register.service';
 })
 export class RegisterComponent implements OnInit {
 
-  customer = new customer();
+  customer = new Customer();
   msg='';
   constructor(private _service: RegisterService, private _router: Router) { }
 
@@ -24,7 +24,7 @@ export class RegisterComponent implements OnInit {
     this._service.registerPage(this.customer).subscribe (
       data => {
         console.log("response recieve");
-        this._router.navigate(['/login'])
+        this._router.navigate(['/profile'])
       },
       error => {
         console.log("exception occured");

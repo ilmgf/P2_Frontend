@@ -2,7 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Cart } from './objects/Cart';
-import { customer } from './objects/customer';
+import { Customer } from './objects/customer';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +10,7 @@ import { customer } from './objects/customer';
 export class CheckoutService {
 
   baseurl = "http://localhost:8080/home";
-  customer: customer | any;
+  customer: Customer | any;
 
   constructor(private http:HttpClient) { }
 
@@ -22,7 +22,7 @@ export class CheckoutService {
 
     getCustomersCart():Observable<Cart>{
       let jsonObj=JSON.parse(sessionStorage.getItem("currentUser")!);
-      this.customer=jsonObj as customer;
+      this.customer=jsonObj as Customer;
       return this.http.put<Cart>(this.baseurl+"/cart", this.customer)
     }
 

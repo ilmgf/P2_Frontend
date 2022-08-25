@@ -11,6 +11,8 @@ import { LoginComponent } from './login/login/login.component';
 import { RegisterComponent } from './register/register/register.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { CheckoutComponent } from './checkout/checkout/checkout.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 
 @NgModule({
@@ -20,7 +22,8 @@ import { CheckoutComponent } from './checkout/checkout/checkout.component';
     HomeComponent,
     LoginComponent,
     RegisterComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    UserProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +31,8 @@ import { CheckoutComponent } from './checkout/checkout/checkout.component';
     CarouselModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
