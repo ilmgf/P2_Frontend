@@ -7,17 +7,32 @@
 <!-- * * * * * * * to get started with your project! * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <div class="toolbar">E-commerce P2</div>
-
+<ul class="navContent">
 <div class="navbar">
-    <div class="navContent">
-      <a routerLink="home">Home</a>
-      <a routerLink="checkout">Checkout</a>
-      <a routerLink="login">Login</a>
-      <a routerLink="register">Register</a>
-      <a routerLink="profile">Profile</a>
-      
+  <li class="nav-item">
+    <a class="nav-link active" aria-current="page" routerLink="home"><button class="btn btn-#0b5394"  style="color: blue"><i class=""> Home</i></button></a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link active" aria-current="page" routerLink="checkout"><button class="btn btn-#0b5394"  style="color: blue"><i class="">Checkout</i></button></a>
+  </li>
+  <!-- <li class="nav-item">
+    <a routerLink="login">Login</a>
+  </li> -->
+  
+  <a class="nav-link active" aria-current="page" routerLink="register"><button class="btn btn-#0b5394" style="color: blue"><i class=""> Register</i></button></a>
+   <li class="nav-item" *ngIf="userIsLogedIn()" >
+        <a class="nav-link active" aria-current="page" routerLink="profile"><button class="btn btn-#0b5394" style="color: blue"><i class=""> Profile</i></button></a>
+      </li>      
+      <li class="nav-item" *ngIf="userIsLogedIn()" >
+        <a class="nav-link active" aria-current="page" routerLink="home"><button class="btn btn-#0b5394" (click)="logout()" style="color: blue"><i class=""> Logout</i></button></a>
+      </li>
+      <li class="nav-item" *ngIf="!userIsLogedIn()" >
+        <a class="nav-link active" aria-current="page" routerLink="login"><button class="btn btn-#0b5394" style="color: blue"><i class=""> Login</i></button></a>
+      </li>
     </div>
-  </div>
+</ul>
+
+  
   <!-- <div class="container">
 
     <div class="row">
