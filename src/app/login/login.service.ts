@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { customer } from '../objects/customer';
+import { Customer} from '../objects/customer';
 
 @Injectable({
   providedIn: 'root'
@@ -10,14 +10,14 @@ export class LoginService {
   public username!: string;
   public password!: string;
   baseUrl = "http://localhost:8080/g-corp/login";
-  public currentUser: customer = {
-    id: 1,
-    username: '',
-    password: '',
-  };
+  // public currentUser: Customer = {
+  //   id: 1,
+  //   username: '',
+  //   password: '',
+  // };
   constructor(private http: HttpClient) { }
 
-  loginCustomer(customer: customer): Observable<object> {
+  loginCustomer(customer: Customer): Observable<object> {
     console.log(customer)
   return this.http.post(`${this.baseUrl}`,customer);
   }
@@ -28,10 +28,10 @@ export class LoginService {
     }),
   };
 
-  loginCheck(username: string, password: string): Observable<customer> {
+  loginCheck(username: string, password: string): Observable<Customer> {
     let passlower: string = password.toLowerCase();
     let params = new HttpParams().set('username', username).set('password', passlower);
-    return this.http.get<customer>(this.baseUrl + 'login', { params: params });
+    return this.http.get<Customer>(this.baseUrl + 'login', { params: params });
   }
 }
 

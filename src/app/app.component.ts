@@ -25,4 +25,7 @@ export class AppComponent {
       return true;
     }
   }
+  logout() {
+    sessionStorage.clear();
+  }
 }
