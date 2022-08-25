@@ -9,12 +9,12 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 
 
 const routes: Routes = [
+  {path:'home', component:HomeComponent},
+  {path:'', redirectTo:'/home', pathMatch:'full'},
   {path:'cart', component: CartComponent},
   {path:'', redirectTo:'/cart', pathMatch:'full'},
   {path: 'login', component: LoginComponent},
   {path:'', redirectTo:'/login', pathMatch:'full'},
-  {path:'home', component:HomeComponent},
-  {path:'', redirectTo:'/home', pathMatch:'full'},
   {path:'register', component: RegisterComponent},
   {path:'', redirectTo:'/register', pathMatch:'full'},
   {path:'checkout', component: CheckoutComponent},
