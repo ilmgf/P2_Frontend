@@ -36,6 +36,7 @@ toRegister(){
         // console.log("response recieve"),
         this._router.navigate(['/home'])
         this.invalidLogin = false;
+        alert('You have successfully logged in! - Redirecting to home page');
       },
       (error: any) => {
         // console.log("exception occured"),
