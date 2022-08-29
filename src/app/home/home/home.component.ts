@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { consoles } from 'src/app/objects/consoles';
+import { Console } from 'src/app/objects/Console';
 import { GetService } from 'src/app/get.service';
 import { ActivatedRoute } from '@angular/router';
 
@@ -10,22 +10,26 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
-  console:consoles | any;
-  title: string | any;
+constructor(private _GetService:GetService, private route:ActivatedRoute) { }
 
-  constructor(private _GetService:GetService, private route:ActivatedRoute) { }
+  consoles:Console[] | any;
+  ptitle: string | any;
+  pname:string| any;
 
+  
   ngOnInit(): void {
     this.route.params.subscribe(params =>{
-      this.title=params['title'];
+      this.ptitle=params['ptitle'];
     });
-    this._GetService.getSingleConsole(this.title).subscribe(data=>{ this.console = data})
+    this._GetService.getSingleConsole(this.pname).subscribe(data=>{ this.consoles = data})
 
   }
-addtocart(title:string){
+addToCart(ptitle:string){
   alert('Item added to cart');
-  this.title=title;
-    console.log("added to cart "+this.title);
+  this.pname=ptitle;
+
+  this._GetService.addItemToCart(this.pname)
+    console.log("added to cart "+this.pname);
 }
 
   images = [
