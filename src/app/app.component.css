@@ -3,9 +3,11 @@
     height:35px;
     margin: auto;
     font-size:x-large;
+    text-align: center;
 }
 .navbar{
-    background-color: rgb(212, 197, 197);
+    background-color: rgb(196, 219, 224);
+    margin-right: 50px;
 }
 .navContent,a{
     margin-right: 50px;
@@ -16,7 +18,7 @@
     margin-left: 29px;
 }
 .toolbar{
-    background-color: rgb(255, 17, 0);
+    background-color: rgb(107, 206, 231);
 }
 
 ul {
