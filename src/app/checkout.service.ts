@@ -2,14 +2,14 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Cart } from './objects/Cart';
-import { Customer } from './objects/customer';
+import { Customer } from './objects/Customer';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CheckoutService {
 
-  baseurl = "http://localhost:8080/home";
+  baseurl = "http://localhost:8080/g-corp";
   customer: Customer | any;
 
   constructor(private http:HttpClient) { }
@@ -29,5 +29,7 @@ export class CheckoutService {
     checkoutCustomer(cart:Cart):Observable<Cart>{
       return this.http.put<Cart>(this.baseurl+"/checkout", cart)
     }
+
+  
   
 }

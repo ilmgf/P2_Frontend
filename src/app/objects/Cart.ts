@@ -1,5 +1,7 @@
-import { transaction } from "./transaction";
+import { Transaction } from "./Transaction";
 
 export interface Cart{
-    transactions: transaction[];
+    cartNum:number;
+    totalPrice:number;
+    transactions:Transaction[];
 }

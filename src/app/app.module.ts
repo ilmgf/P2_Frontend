@@ -13,6 +13,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { CheckoutComponent } from './checkout/checkout/checkout.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { ConsolePageComponent } from './console-page/console-page.component';
+import { ConsoleListComponent } from './console-list/console-list.component';
 
 
 @NgModule({
@@ -23,7 +25,9 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
     LoginComponent,
     RegisterComponent,
     CheckoutComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    ConsolePageComponent,
+    ConsoleListComponent
   ],
   imports: [
     BrowserModule,

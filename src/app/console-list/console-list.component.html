@@ -1,0 +1,15 @@
+<div class="container">
+    <div *ngFor="let console of consoles" class="row p-2 bg-white border rounded">
+        <div class="col-3">
+        <img src="{{console.consoleCoverLink}}" alt="console cover for {{console.ptitle}}" routerLink="../console/{{console.ptitle}}">
+        </div>
+        <div class="col-6">
+        <a routerLink="../console/{{console.ptitle}}">{{console.ptitle}} </a> <p> <i class="fa fa-star"></i></p>
+        <p>{{console.pdescription}}</p>
+        </div>
+        <div class="col-3">
+        <p style="float:left">{{console.pprice | currency}}</p>
+        <button (click)="addToCart(console.ptitle)">Add To Cart</button>
+        </div>
+    </div>
+    </div>

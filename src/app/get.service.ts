@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { consoles } from './objects/consoles';
-import { Customer } from './objects/customer';
+import { Console } from './objects/Console';
+import { Customer } from './objects/Customer';
 import { Cart } from './objects/Cart';
 
 
@@ -21,22 +21,22 @@ export class GetService {
     })
     
   }
-  getSingleConsole(title:string):Observable<consoles>{
-    return this.http.get<consoles>(this.baseurl+"/consoles/"+title)
+  getSingleConsole(ptitle:string):Observable<Console>{
+    return this.http.get<Console>(this.baseurl+"/console/"+ptitle)
   }
 
-  getAllConsoles():Observable<consoles>{
-    return this.http.get<consoles>(this.baseurl+"/consoles/all-consoles")
+  getAllConsoles():Observable<Console>{
+    return this.http.get<Console>(this.baseurl+"/console/all-consoles")
   }
   
   getCustomer(username:string):Observable<Customer>{
     return this.http.get<Customer>(this.baseurl+"/user/username/"+username)
   }
 
-  addItemToCart(title:string):Observable<Cart>{
+  addItemToCart(ptitle:string):Observable<Cart>{
     let jsonObj=JSON.parse(sessionStorage.getItem("currentUser")!);
     this.customer=jsonObj as Customer;
-    return this.http.post<Cart>(this.baseurl+"/consoles/"+title+"/addtocart", this.customer)
+    return this.http.post<Cart>(this.baseurl+"/console/"+ptitle+"/addtocart", this.customer)
   }
 
   getCustomersCart(customer:Customer):Observable<Cart>{
@@ -49,5 +49,8 @@ export class GetService {
 
   updateCart(cart:Cart):Observable<Cart>{
     return this.http.post<Cart>(this.baseurl+"/updateCart", cart)
+  }
+  removeItemFromCart(customer:Customer,ptitle:string):Observable<Cart>{
+    return this.http.post<Cart>(this.baseurl+"/console/"+ptitle+"/removefromcart", customer)
   }
 }

@@ -1,8 +1,8 @@
 import { Cart } from "./Cart";
-import { consoles } from "./consoles"
+import { Console } from "./Console"
 
-export interface transaction{
+export interface Transaction{
     cart: Cart;
-    console: consoles;
+    console: Console;
     quantity: number;
 }
