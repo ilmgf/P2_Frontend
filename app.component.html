@@ -1,0 +1,63 @@
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
+<!-- * * * * * * * to get started with your project! * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<div class="toolbar">* * * Green Lantern Corp's E-commerce P2 * * *</div>
+<ul class="navContent">
+<div class="navbar">
+  <li class="nav-item">
+    <a class="nav-link active" aria-current="page" routerLink="home"><button class="btn btn-#0b5394"  style="color: blue"><i class=""> Home</i></button></a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link active" aria-current="page" routerLink="cart"><button class="btn btn-#0b5394"  style="color: blue"><i class="">Cart</i></button></a>
+  </li>
+  <!-- <li class="nav-item">
+    <a routerLink="login">Login</a>
+  </li> -->
+  
+  <a class="nav-link active" aria-current="page" routerLink="register"><button class="btn btn-#0b5394" style="color: blue"><i class=""> Register</i></button></a>
+   <li class="nav-item" *ngIf="userIsLogedIn()" >
+        <a class="nav-link active" aria-current="page" routerLink="profile"><button class="btn btn-#0b5394" style="color: blue"><i class=""> Profile</i></button></a>
+      </li>      
+      <li class="nav-item" *ngIf="userIsLogedIn()" >
+        <a class="nav-link active" aria-current="page" routerLink="home"><button class="btn btn-#0b5394" (click)="logout()" style="color: blue"><i class=""> Logout</i></button></a>
+      </li>
+      <li class="nav-item" *ngIf="!userIsLogedIn()" >
+        <a class="nav-link active" aria-current="page" routerLink="login"><button class="btn btn-#0b5394" style="color: blue"><i class=""> Login</i></button></a>
+      </li>
+    </div>
+</ul>
+
+  
+  <!-- <div class="container">
+
+    <div class="row">
+  <ul class="navbar-nav">
+
+    <br>
+    
+  <li class="nav-item">
+    <a class="nav-link active" aria-current="page" routerLink="home"><button class="btn btn-#0b5394" style="color: blue"><i> Home</i></button></a>
+  </li>
+  <br>
+  <li class="nav-item">
+    <a class="nav-link active" aria-current="page" routerLink="checkout"><button class="btn btn-#0b5394" style="color: blue"><i > Checkout</i></button></a>
+  </li>
+  <br>
+  <li class="nav-item">
+    <a class="nav-link active" aria-current="page" routerLink="register"><button class="btn btn-#0b5394" style="color: blue"><i> Register</i></button></a>
+  </li>
+  <br>
+  <li class="nav-item" *ngIf="userIsLogedIn()" >
+    <a class="nav-link active" aria-current="page" routerLink="all-movies"><button class="btn btn-#0b5394" (click)="logout()" style="color: blue"><i class="fa fa-sign-in"> Logout</i></button></a>
+  </li>
+  <li class="nav-item" *ngIf="!userIsLogedIn()" >
+    <a class="nav-link active" aria-current="page" routerLink="login"><button class="btn btn-#0b5394" style="color: blue"><i> Login</i></button></a>
+  </li>
+</ul> -->
+
+<router-outlet></router-outlet>

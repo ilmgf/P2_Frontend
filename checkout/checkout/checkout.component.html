@@ -1,0 +1,5 @@
+<h4>Thank you for shopping!</h4>
+<ul>
+    <li *ngFor="let c of cart.transactions">{{c.console.ptitle}} &nbsp; {{c.console.pprice | currency}}</li>
+    <li>and your total is: {{cart.totalPrice}}</li>
+</ul>

@@ -1,0 +1,33 @@
+.toolbar{
+    background-color: darkgrey;
+    height:35px;
+    margin: auto;
+    font-size:x-large;
+}
+.navbar{
+    background-color: rgb(212, 197, 197);
+}
+.navContent,a{
+    margin-right: 50px;
+    padding: 1px;
+    font-size: larger;
+    text-align: center;
+
+    margin-left: 29px;
+}
+.toolbar{
+    background-color: rgb(255, 17, 0);
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333333;
+}
+
+ul > li {
+    display: inline-block;
+    /* You can also add some margins here to make it look prettier */
+}

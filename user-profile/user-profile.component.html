@@ -1,0 +1,35 @@
+<!-- Account details card-->
+<div class="card mb-3">
+    <div class="card-header" style="  background-color: #791386; color: white;">Account Details</div>
+    <div class="card-body">
+        <form #editProfile="ngForm" (submit)="onSubmit(editProfile)">
+            <!-- Form Group (username)-->
+            <div class="mb-3">
+                <label class="small mb-1" for="inputUsername">Username</label>
+                <input class="form-control" name="inputUsername" type="text" placeholder="Username"
+                    [(ngModel)]="customer.username">
+            </div>
+            <!-- Form Group (password)-->
+            <div class="mb-3">
+                <label class="small mb-1" for="inputPassword">Password</label>
+                <input class="form-control" name="inputPassword" type="password" placeholder="Password"
+                    [(ngModel)]="customer.password">
+            </div>
+             <!-- Form Group (firstname)-->
+             <div class="mb-3">
+                <label class="small mb-1" for="inputFirstName">First Name</label>
+                <input class="form-control" name="inputFirstName" type="text" placeholder="First Name"
+                    [(ngModel)]="customer.firstName">
+            </div>
+            <!-- Form Group (lastname)-->
+            <div class="mb-3">
+                <label class="small mb-1" for="inputLastName">Last Name</label>
+                <input class="form-control" name="inputLastName" type="text" placeholder="Last Name"
+                    [(ngModel)]="customer.lastName">
+            </div>
+            <!-- Form Row        -->
+            <!-- Save changes button-->
+            <input class="btn btn-primary" type="submit" name="Edit Profile">
+        </form>
+    </div>
+</div>

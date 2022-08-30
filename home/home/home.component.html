@@ -1,0 +1,17 @@
+<app-carousel [images]="images"></app-carousel>
+
+<div class="image-container">
+<img id="image1" src="https://th.bing.com/th/id/R.14732147edd87bcf51f1556704dc71af?rik=gANE6riPpG2hog&pid=ImgRaw&r=0" alt="ps2bundle">
+<img id="image2" src="https://cdn.shopify.com/s/files/1/0463/6092/0231/products/Microsoft-Original-Xbox-Console-Halo-GTA-Bundle.png?v=1646432968" alt="xboxbundle">
+<img id="image3" src="https://m.media-amazon.com/images/I/71hElqnv8vL._SX342_.jpg" alt="gamecubebundle">
+</div>
+
+<div class="image-description">
+
+</div>
+
+<div class="button-container">
+    <button type="button" class="ps2Button" (click)="addToCart(consoles.ptitle)"> add to cart</button>
+    <button type="button" class="xboxButton" (click)="addToCart(consoles.ptitle)"> add to cart</button>
+    <button type="button" class="gamecubeButton" (click)="addToCart(consoles.ptitle)"> add to cart</button>
+</div>

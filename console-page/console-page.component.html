@@ -1,0 +1,15 @@
+<div class="d-flex align-items-center">
+    <div class="flex-shrink-0">
+<img src="{{console.consoleCoverLink}}" alt="console cover for {{console.ptitle}}">
+</div>
+<div class="flex-grow-1 ms-3">
+<div>
+    <p>{{console.ptitle}} </p>
+</div>
+<div>
+    <p>{{console.pdescription}}</p>
+    <p style="float:left">{{console.pprice | currency}}</p> <br>
+    <button (click)="addToCart(console.ptitle)">Add To Cart</button>
+</div>
+</div>
+</div>
